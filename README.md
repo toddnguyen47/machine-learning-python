@@ -1,2 +1,2 @@
-# machinelearning_usingpython
-Various Machine Learning Models
+# Machine Learning Using Python
+Various Machine Learning Models. More detailed README.md can be found in the folders.
