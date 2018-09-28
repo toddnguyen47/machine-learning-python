@@ -1,0 +1,27 @@
+#!/bin/bash
+#SBATCH -p GPU-shared
+#SBATCH -t 8:00:00
+#SBATCH --gres=gpu:k80:2
+
+#echo commands to stdout
+set -x
+
+#move to working directory
+cd /home/tnguy47/CS599-02_MachineLearning/Assignment2/competition3/
+
+#copy the input file from your pylon2 space
+#  to the working directory
+#cp $PROJECT/input.data .
+
+#run GPU program
+module add keras/2.0.6_anaconda
+source activate $KERAS_ENV
+python c3_model.py
+
+#copy output file to persistent storage
+cp output.data $PROJECT
+cp output.data /home/tnguy47/CS599-02_MachineLearning/Assignment2/competition3/
+
+#backup: SBATCH -N 2
+#backup: SBATCH --ntasks-per-node 28
+#backup: SBATCH --gres=gpu:k80:2

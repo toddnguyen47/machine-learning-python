@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+# Text files
+*.py text
+*.csv text
+
+# Binary files
+*.jpg binary
+*.jpeg binary
+*.png binary
